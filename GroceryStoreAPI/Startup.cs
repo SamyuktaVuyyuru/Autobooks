@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using GroceryStore.DataAccess;
+using GroceryStore.Services;
+using GroceryStoreAPI.Filters;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -18,7 +21,11 @@ namespace GroceryStoreAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddTransient<IDataStore, DataStore>();
+            services.AddTransient<ICustomerRepository, CustomerRepository>();
+            services.AddTransient<ICustomerService, CustomerService>();
             services.AddControllers();
+            services.AddMvc(options =>  options.Filters.Add(typeof(HandleUnExpectedErrorAttribute)));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
