@@ -7,14 +7,14 @@ using System.Text;
 namespace GroceryStore.Services
 {
     /// <summary>
-    /// 
+    /// CustomerService class to handle the presentation logic
     /// </summary>
     public class CustomerService: ICustomerService
     {
         private ICustomerRepository customerRepository;
 
         /// <summary>
-        /// 
+        /// Constructor to initialize the CustomerRepository
         /// </summary>
         /// <param name="CustomerRepository"></param>
         public CustomerService(ICustomerRepository CustomerRepository)
@@ -23,51 +23,54 @@ namespace GroceryStore.Services
         }
 
         /// <summary>
-        /// 
+        /// Returns all customers
         /// </summary>
-        /// <returns></returns>
+        /// <returns>List of Customers</returns>
         public List<Customer> GetAll()
         {
             return customerRepository.GetAll();
         }
+
         /// <summary>
-        /// 
+        /// Returns a customer by Id
         /// </summary>
         /// <param name="id"></param>
-        /// <returns></returns>
+        /// <returns>Customer</returns>
         public Customer GetById(int id)
         {
             return customerRepository.GetById(id);
 
         }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="customer"></param>
-        /// <returns></returns>
-        public bool Update(Customer customer)
-        {
-            return customerRepository.Update(customer);
-        }
 
-        public void Update(int id, string value)
-        {
-             customerRepository.Update(id,value);
-        }
         /// <summary>
-        /// 
+        /// Updates a customer and returns true on successful update
         /// </summary>
         /// <param name="id"></param>
-        /// <returns></returns>
+        /// <param name="value"></param>
+        /// <returns>bool</returns>
+        public bool Update(int id, string value)
+        {
+           return  customerRepository.Update(id,value);
+        }
+
+        /// <summary>
+        /// Deletes a customer by Id and returns true on success
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>bool</returns>
         public bool Delete(int id)
         {
             return customerRepository.Delete(id);
-
         }
 
-        public void Add(string value)
+        /// <summary>
+        /// Adds a new customer and returns true on success
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns>bool</returns>
+        public bool Add(string value)
         {
-            customerRepository.Add(value);
+           return customerRepository.Add(value);
         }
     }
 }

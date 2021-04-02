@@ -10,7 +10,7 @@ namespace GroceryStore.DataAccess
 {
     public class DataStore : IDataStore
     {   /// <summary>
-        /// 
+        /// Backend relational logic to fetch records from json file
         /// </summary>
         /// <returns>Returns a list of customer records</returns>
         public List<Customer> GetRawData()
@@ -29,7 +29,7 @@ namespace GroceryStore.DataAccess
         }
 
         /// <summary>
-        /// 
+        /// Backend relational logic to update the json file
         /// </summary>
         /// <param name="customers"></param>
         /// <returns>Returns true after a customer record is updated</returns>

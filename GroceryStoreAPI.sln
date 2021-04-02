@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GroceryStore.DataAccess", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GroceryStore.Models", "GroceryStore.Models\GroceryStore.Models.csproj", "{DDB18170-5E2A-4BF1-85A5-206774A5ACBD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GroceryStoreUnitTest", "GroceryStoreUnitTest\GroceryStoreUnitTest.csproj", "{DC6F1870-E1B5-49BD-912C-20A522BA8A56}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GroceryStoreUnitTest", "GroceryStoreUnitTest\GroceryStoreUnitTest.csproj", "{DC6F1870-E1B5-49BD-912C-20A522BA8A56}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

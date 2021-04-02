@@ -9,16 +9,11 @@ namespace GroceryStore.Services
     /// </summary>
     public interface ICustomerRepository
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
          List<Customer> GetAll();
          Customer GetById(int id);
-         bool Update(Customer customer);
-         void Update(int id, string value);
+         bool Update(int id, string value);
          bool Delete(int id);
-        void Add(string value);
+         bool Add(string value);
 
     }
 }
